@@ -140,19 +140,41 @@ class PlaybackNotifier extends ChangeNotifier {
     }
   }
 
+  String? _lastSyncedTitle;
+  String? _lastSyncedArtist;
+  bool? _lastSyncedPlaying;
+  String? _lastSyncedLyric;
+
   void _syncWidget() {
     final item = _currentMediaItem;
     if (item == null) return;
     final isLossless = item.extras?['isLossless'] == true;
     final rawFormat = item.extras?['format'] ?? 'FLAC';
     final badge = isLossless ? 'FLAC 24-BIT' : rawFormat;
+    final title = item.title;
+    final artist = item.extras?['originalArtist'] ?? item.artist ?? 'Ready to play';
+    final playing = isPlaying;
+    final lyric = _currentLyric;
+
+    if (_lastSyncedTitle == title &&
+        _lastSyncedArtist == artist &&
+        _lastSyncedPlaying == playing &&
+        _lastSyncedLyric == lyric) {
+      return;
+    }
+
+    _lastSyncedTitle = title;
+    _lastSyncedArtist = artist;
+    _lastSyncedPlaying = playing;
+    _lastSyncedLyric = lyric;
+
     WidgetSyncService.updateWidget(
-      title: item.title,
-      artist: item.extras?['originalArtist'] ?? item.artist ?? 'Ready to play',
+      title: title,
+      artist: artist,
       format: badge,
-      isPlaying: isPlaying,
+      isPlaying: playing,
       artPath: item.artUri?.toString() ?? item.extras?['path'],
-      lyric: _currentLyric,
+      lyric: lyric,
     );
   }
 

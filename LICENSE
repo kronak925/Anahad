@@ -1,0 +1,26 @@
+ANAHAD SOURCE-AVAILABLE PROPRIETARY LICENSE
+Copyright (c) 2026 The ANAHAD Project Author. All Rights Reserved.
+
+PREAMBLE
+This software and associated documentation files (the "Software") are made available publicly for portfolio demonstration, educational review, and security audit purposes. The Author retains full and exclusive ownership, copyright, and intellectual property rights in and to the Software.
+
+TERMS AND CONDITIONS
+
+1. PERMITTED USES
+You are granted a non-exclusive, non-transferable, revocable license to:
+   (a) View, read, clone, and inspect the source code for personal, non-commercial educational study, architecture evaluation, and security research.
+   (b) Compile and run the Software locally on your own personal device for personal, non-commercial testing and evaluation.
+
+2. RESTRICTIONS
+You may NOT, under any circumstances, without prior written authorization from the Author:
+   (a) Distribute, sublicense, rent, lease, sell, or commercially exploit the Software, in whole or in part, in source or binary form.
+   (b) Package, publish, or distribute the Software or any derivative work to any public application store (including, but not limited to, Google Play Store, Apple App Store, F-Droid, or Amazon Appstore).
+   (c) Remove, alter, or obscure any copyright notices, trademarks, or author attribution in the Software.
+   (d) Use the name "ANAHAD", the ANAHAD logo, brand assets, or styling in any derivative work or fork without express written consent.
+   (e) Create public commercial derivatives or white-label versions of the Software.
+
+3. CONTRIBUTIONS
+Any bug reports, pull requests, or code contributions submitted to the ANAHAD repository shall, unless otherwise agreed in writing, become licensed to the Author under terms sufficient to allow integration and continued proprietary or open release at the Author's sole discretion.
+
+4. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

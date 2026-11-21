@@ -12,7 +12,7 @@
   <a href="#features"><img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=flat&logo=android&logoColor=white" alt="Platform: Android" /></a>
   <a href="#technical-stack"><img src="https://img.shields.io/badge/Built%20With-Flutter%203.27-02569B?style=flat&logo=flutter&logoColor=white" alt="Built with Flutter" /></a>
   <a href="#privacy-overview"><img src="https://img.shields.io/badge/Privacy-Zero%20Telemetry-blueviolet?style=flat&logo=shield" alt="Privacy: Zero Telemetry" /></a>
-  <a href="#licensing"><img src="https://img.shields.io/badge/License-Pending%20Approval-orange?style=flat" alt="License" /></a>
+  <a href="#licensing"><img src="https://img.shields.io/badge/License-Source--Available%20Proprietary-red?style=flat" alt="License: Source-Available" /></a>
 </p>
 
 ---
@@ -48,11 +48,13 @@ Designed for music lovers who appreciate clean design, audiophile fidelity, and 
 
 ## 3. Screenshots & Visual Interface
 
-| Home & Regional Music | Now Playing & Lossless Badges | Search & History | Settings & Legal Hub |
-|---|---|---|---|
-| *(assets/screenshots/home.png)* | *(assets/screenshots/now_playing.png)* | *(assets/screenshots/search.png)* | *(assets/screenshots/settings.png)* |
+| Home Screen & Regional Music | Now Playing & Lossless Badges | Live Synced Lyrics | Search & History | Library Screen |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/01_home_screen.png" width="160" /> | <img src="docs/screenshots/02_now_playing_screen.png" width="160" /> | <img src="docs/screenshots/03_lyrics_screen.png" width="160" /> | <img src="docs/screenshots/04_search_screen.png" width="160" /> | <img src="docs/screenshots/05_library_screen.png" width="160" /> |
 
-*(High-resolution screenshots are available in `/marketing/` and `docs/`)*
+| Playback Queue Sheet | Online Album Detail | Online Artist Discovery | Audio & App Settings | Regional Language Hub |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/06_queue_sheet.png" width="160" /> | <img src="docs/screenshots/07_online_album_screen.png" width="160" /> | <img src="docs/screenshots/08_online_artist_screen.png" width="160" /> | <img src="docs/screenshots/09_settings_screen.png" width="160" /> | <img src="docs/screenshots/10_language_screen.png" width="160" /> |
 
 ---
 

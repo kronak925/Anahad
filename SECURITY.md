@@ -16,9 +16,7 @@ Only the latest release of ANAHAD receives security updates.
 The ANAHAD team takes security seriously. If you discover a security vulnerability or privacy flaw in ANAHAD, please disclose it responsibly.
 
 ### How to Report
-Please report security vulnerabilities by emailing the maintainer:
-- **Email**: `[security@anahad.app or maintainer@example.com]`
-- **Subject Line**: `[SECURITY VULNERABILITY] ANAHAD - <Short Description>`
+Please report security vulnerabilities through GitHub's Private Vulnerability Reporting mechanism under the repository's **Security > Advisories** tab, or open a confidential security advisory.
 
 Please include:
 1. Detailed description of the vulnerability and its impact.

@@ -32,6 +32,8 @@ class AnahadAppWidgetProvider : AppWidgetProvider() {
 
         @Volatile private var cachedArtUrl: String? = null
         @Volatile private var cachedBitmap: android.graphics.Bitmap? = null
+        private val imageExecutor = java.util.concurrent.Executors.newSingleThreadExecutor()
+        private val downloadingUrls = java.util.Collections.synchronizedSet(mutableSetOf<String>())
 
         var widgetActionListener: ((String) -> Unit)? = null
 
@@ -106,29 +108,33 @@ class AnahadAppWidgetProvider : AppWidgetProvider() {
                 if (cachedArtUrl == artPath && cachedBitmap != null) {
                     views.setImageViewBitmap(R.id.widget_album_art, cachedBitmap)
                 } else if (artPath.startsWith("http://") || artPath.startsWith("https://")) {
-                    // Load remote image in background thread with downsampling
-                    Thread {
-                        try {
-                            val url = URL(artPath)
-                            val conn = url.openConnection() as HttpURLConnection
-                            conn.connectTimeout = 3000
-                            conn.readTimeout = 3000
-                            conn.doInput = true
-                            conn.connect()
-                            val input = conn.inputStream
-                            val rawBitmap = BitmapFactory.decodeStream(input)
-                            input.close()
-                            if (rawBitmap != null) {
-                                val scaled = scaleBitmap(rawBitmap, 128)
-                                cachedArtUrl = artPath
-                                cachedBitmap = scaled
-                                val updatedViews = RemoteViews(context.packageName, R.layout.widget_now_playing)
-                                updatedViews.setImageViewBitmap(R.id.widget_album_art, scaled)
-                                appWidgetManager.partiallyUpdateAppWidget(appWidgetId, updatedViews)
+                    // Queue remote image download safely in executor pool without duplicate tasks
+                    if (downloadingUrls.add(artPath)) {
+                        imageExecutor.submit {
+                            try {
+                                val url = URL(artPath)
+                                val conn = url.openConnection() as HttpURLConnection
+                                conn.connectTimeout = 3000
+                                conn.readTimeout = 3000
+                                conn.doInput = true
+                                conn.connect()
+                                val input = conn.inputStream
+                                val rawBitmap = BitmapFactory.decodeStream(input)
+                                input.close()
+                                if (rawBitmap != null) {
+                                    val scaled = scaleBitmap(rawBitmap, 128)
+                                    cachedArtUrl = artPath
+                                    cachedBitmap = scaled
+                                    val updatedViews = RemoteViews(context.packageName, R.layout.widget_now_playing)
+                                    updatedViews.setImageViewBitmap(R.id.widget_album_art, scaled)
+                                    appWidgetManager.partiallyUpdateAppWidget(appWidgetId, updatedViews)
+                                }
+                            } catch (_: Exception) {
+                            } finally {
+                                downloadingUrls.remove(artPath)
                             }
-                        } catch (_: Exception) {
                         }
-                    }.start()
+                    }
                     // Show cached or default while loading
                     if (cachedBitmap != null) {
                         views.setImageViewBitmap(R.id.widget_album_art, cachedBitmap)

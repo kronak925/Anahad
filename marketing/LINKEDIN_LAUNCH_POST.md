@@ -38,10 +38,10 @@ What Building This Taught Me:
 2. Modern Android media services (MediaSessionCompat, foreground playback, AppWidgets) require careful lifecycle management—there are no shortcuts to rock-solid stability.
 3. True privacy in mobile apps is a deliberate design choice, not an accident.
 
-ANAHAD is now open-source and ready for community testing. 
+ANAHAD's source code is now publicly viewable on GitHub for developers, designers, and audiophiles to inspect and test. 
 
 GitHub Repository: [Insert GitHub URL - https://github.com/username/anahad]
-Download Release APK: [Insert Direct Download Link / Release Asset URL]
+Download Verified Release APK: [Insert Direct Download Link / Release Asset URL]
 
 I would love your feedback on the audio pipeline, UX, and performance. If you are an audiophile, Android dev, or music lover, give it a spin and let me know what you think!
 

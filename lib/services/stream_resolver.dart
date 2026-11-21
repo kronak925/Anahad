@@ -24,7 +24,7 @@ class StreamResolver {
   StreamResolver({YoutubeExplode? yt}) : _yt = yt ?? YoutubeExplode();
 
   /// Resolves the playable audio stream for any given TrackModel
-  Future<ResolvedStream?> resolveStream(TrackModel track) async {
+  Future<ResolvedStream?> resolveStream(TrackModel track, {bool forceFallback = false}) async {
     // 1. Local or sample track
     if (track.sourceType == AudioSourceType.local || track.sourceType == AudioSourceType.sample) {
       return ResolvedStream(
@@ -37,8 +37,21 @@ class StreamResolver {
 
     // 2. JioSaavn track
     if (track.sourceType == AudioSourceType.saavn) {
-      // Check if already decrypted
-      if (track.uri.startsWith('http') && !track.uri.contains('preview.saavncdn.com')) {
+      // If forceFallback is requested, try 160k quality first
+      if (forceFallback && track.encryptedMediaUrl != null && track.encryptedMediaUrl!.isNotEmpty) {
+        final decrypted160 = JioSaavnService.decryptMediaUrl(track.encryptedMediaUrl, quality: '160');
+        if (decrypted160 != null && decrypted160.startsWith('http') && decrypted160 != track.uri) {
+          return ResolvedStream(
+            url: decrypted160,
+            format: 'AAC 160k',
+            bitrate: 160,
+            source: 'saavn',
+          );
+        }
+      }
+
+      // Check if already decrypted (when not forcing fallback)
+      if (!forceFallback && track.uri.startsWith('http') && !track.uri.contains('preview.saavncdn.com')) {
         return ResolvedStream(
           url: track.uri,
           format: 'AAC 320k',
@@ -48,7 +61,7 @@ class StreamResolver {
       }
 
       // Try decrypting encrypted_media_url
-      if (track.encryptedMediaUrl != null && track.encryptedMediaUrl!.isNotEmpty) {
+      if (!forceFallback && track.encryptedMediaUrl != null && track.encryptedMediaUrl!.isNotEmpty) {
         final decrypted = JioSaavnService.decryptMediaUrl(track.encryptedMediaUrl, quality: '320');
         if (decrypted != null && decrypted.startsWith('http')) {
           return ResolvedStream(
@@ -60,7 +73,7 @@ class StreamResolver {
         }
       }
 
-      // If JioSaavn direct CDN URL is not available, fall back to YouTube resolution
+      // If JioSaavn direct CDN URL is not available or failed, fall back to YouTube resolution
       debugPrint('[StreamResolver] JioSaavn CDN unavailable, attempting YouTube fallback for: ${track.title}');
     }
 

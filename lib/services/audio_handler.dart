@@ -13,8 +13,8 @@ Future<AudioHandler> initAudioService() async {
       androidNotificationChannelId: 'com.anahad.audio.channel.playback',
       androidNotificationChannelName: 'ANAHAD Music Playback',
       androidNotificationChannelDescription: 'Live playback controls for ANAHAD lossless music player',
-      androidNotificationOngoing: true,
-      androidStopForegroundOnPause: true,
+      androidNotificationOngoing: false,
+      androidStopForegroundOnPause: false,
       androidNotificationIcon: 'drawable/ic_notification',
       androidShowNotificationBadge: true,
     ),
@@ -121,6 +121,23 @@ class AnahadAudioHandler extends BaseAudioHandler {
       await play();
     } catch (e) {
       debugPrint('[AudioHandler] Player setAudioSource error: $e');
+      // Resilient Fallback Recovery:
+      // If initial stream fails (e.g. HTTP 403 Forbidden on CDN or unavailable bitrate),
+      // seamlessly resolve audio stream via YouTube Explode or 160k fallback
+      try {
+        final fallbackStream = await _resolver.resolveStream(startingTrack, forceFallback: true);
+        if (fallbackStream != null && fallbackStream.url.isNotEmpty && fallbackStream.url != startingTrack.uri) {
+          debugPrint('[AudioHandler] Recovering playback with fallback stream: ${fallbackStream.url}');
+          final fallbackTrack = startingTrack.copyWith(uri: fallbackStream.url);
+          final fallbackSource = AudioSource.uri(Uri.parse(fallbackStream.url), tag: fallbackTrack.toMediaItem());
+          await _player.setAudioSource(fallbackSource);
+          _currentIndex = 0;
+          mediaItem.add(fallbackTrack.toMediaItem());
+          await play();
+        }
+      } catch (fallbackError) {
+        debugPrint('[AudioHandler] Fallback playback recovery error: $fallbackError');
+      }
     }
   }
 
