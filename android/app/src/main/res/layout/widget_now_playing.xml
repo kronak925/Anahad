@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <!-- Album Artwork Thumbnail -->
+    <ImageView
+        android:id="@+id/widget_album_art"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/widget_art_bg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_widget_music"
+        android:contentDescription="Album Art" />
+
+    <!-- Metadata Section -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/widget_track_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="ANAHAD Music"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_track_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Ready to play"
+            android:textColor="#94A3B8"
+            android:textSize="13sp" />
+
+        <!-- Live Synchronized Lyric Line -->
+        <TextView
+            android:id="@+id/widget_lyrics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="♪ Live Lyrics"
+            android:textColor="#38BDF8"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/widget_format_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="ANAHAD AUDIO"
+            android:textColor="#38BDF8"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/widget_btn_prev"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Previous"
+            android:padding="6dp"
+            android:src="@drawable/ic_widget_prev" />
+
+        <ImageButton
+            android:id="@+id/widget_btn_play_pause"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Play/Pause"
+            android:padding="6dp"
+            android:src="@drawable/ic_widget_play" />
+
+        <ImageButton
+            android:id="@+id/widget_btn_next"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Next"
+            android:padding="6dp"
+            android:src="@drawable/ic_widget_next" />
+    </LinearLayout>
+
+</LinearLayout>

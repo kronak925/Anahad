@@ -1,0 +1,160 @@
+import 'package:flutter/material.dart';
+
+class MusicLanguage {
+  final String id;
+  final String name;
+  final String nativeName;
+  final String subtitle;
+  final String searchQuery;
+  final String albumQuery;
+  final List<Color> gradient;
+  final IconData icon;
+  final List<String> subgenres;
+
+  const MusicLanguage({
+    required this.id,
+    required this.name,
+    required this.nativeName,
+    required this.subtitle,
+    required this.searchQuery,
+    required this.albumQuery,
+    required this.gradient,
+    required this.icon,
+    required this.subgenres,
+  });
+
+  static const List<MusicLanguage> supportedLanguages = [
+    MusicLanguage(
+      id: 'hindi',
+      name: 'Hindi',
+      nativeName: 'हिंदी',
+      subtitle: 'Bollywood, Indie & Retro',
+      searchQuery: 'Hindi Top Hits',
+      albumQuery: 'Bollywood Hits',
+      gradient: [Color(0xFFE53935), Color(0xFF8E0000)],
+      icon: Icons.music_note_rounded,
+      subgenres: ['Bollywood Hits', 'Romantic Melodies', '90s Classics', 'Indie Pop', 'Party Beats', 'Sufi & Ghazal'],
+    ),
+    MusicLanguage(
+      id: 'english',
+      name: 'English',
+      nativeName: 'English',
+      subtitle: 'Global Pop & Billboard Top 50',
+      searchQuery: 'English Pop Hits',
+      albumQuery: 'English Hits',
+      gradient: [Color(0xFF1E88E5), Color(0xFF0D47A1)],
+      icon: Icons.public_rounded,
+      subgenres: ['Billboard Top 50', 'Pop Hits', 'Hip-Hop & Rap', 'Acoustic Chill', 'EDM & Dance', 'Rock Classics'],
+    ),
+    MusicLanguage(
+      id: 'marathi',
+      name: 'Marathi',
+      nativeName: 'मराठी',
+      subtitle: 'Lavani, Natyageet & Modern',
+      searchQuery: 'Marathi Top Hits',
+      albumQuery: 'Marathi Songs',
+      gradient: [Color(0xFFD81B60), Color(0xFF880E4F)],
+      icon: Icons.stars_rounded,
+      subgenres: ['Top Marathi Hits', 'Lavani & Folk', 'Natyageet', 'Romantic Marathi', 'Bhakti Geet', 'Modern Marathi Pop'],
+    ),
+    MusicLanguage(
+      id: 'gujarati',
+      name: 'Gujarati',
+      nativeName: 'ગુજરાતી',
+      subtitle: 'Garba, Folk & Urban Hits',
+      searchQuery: 'Gujarati Top Songs',
+      albumQuery: 'Gujarati Garba',
+      gradient: [Color(0xFF00ACC1), Color(0xFF006064)],
+      icon: Icons.celebration_rounded,
+      subgenres: ['Navratri Garba', 'Urban Gujarati Pop', 'Folk & Dayro', 'Romantic Melodies', 'Lokgeet', 'Gujarati DJ Hits'],
+    ),
+    MusicLanguage(
+      id: 'rajasthani',
+      name: 'Rajasthani',
+      nativeName: 'राजस्थानी',
+      subtitle: 'Marwadi Folk, DJ & Traditional',
+      searchQuery: 'Rajasthani Marwadi Songs',
+      albumQuery: 'Rajasthani Songs',
+      gradient: [Color(0xFF8E24AA), Color(0xFF4A148C)],
+      icon: Icons.audiotrack_rounded,
+      subgenres: ['Marwadi Folk', 'Ghoomar Hits', 'Rajasthani DJ Remix', 'Veena Bhajan', 'Desi Traditional', 'Lok Sangeet'],
+    ),
+    MusicLanguage(
+      id: 'punjabi',
+      name: 'Punjabi',
+      nativeName: 'ਪੰਜਾਬੀ',
+      subtitle: 'Bhangra, Urban Desi & Pop',
+      searchQuery: 'Punjabi Top Hits',
+      albumQuery: 'Punjabi Hits',
+      gradient: [Color(0xFFFF8F00), Color(0xFFC43E00)],
+      icon: Icons.bolt_rounded,
+      subgenres: ['Bhangra Pop', 'Urban Desi Hits', 'Punjabi Party', 'Sad Melodies', 'Dhol Beats', 'Folk Punjabi'],
+    ),
+    MusicLanguage(
+      id: 'tamil',
+      name: 'Tamil',
+      nativeName: 'தமிழ்',
+      subtitle: 'Kollywood & Anirudh Hits',
+      searchQuery: 'Tamil Top Hits',
+      albumQuery: 'Tamil Hits',
+      gradient: [Color(0xFFFB8C00), Color(0xFFBF360C)],
+      icon: Icons.album_rounded,
+      subgenres: ['Kollywood Top Hits', 'Anirudh Specials', 'Melody Hits', 'Kuthu Beats', 'ARR Classics', 'Indie Tamil'],
+    ),
+    MusicLanguage(
+      id: 'telugu',
+      name: 'Telugu',
+      nativeName: 'తెలుగు',
+      subtitle: 'Tollywood Mass Beats & Melodies',
+      searchQuery: 'Telugu Top Hits',
+      albumQuery: 'Telugu Hits',
+      gradient: [Color(0xFF43A047), Color(0xFF1B5E20)],
+      icon: Icons.speaker_rounded,
+      subgenres: ['Tollywood Mass Hits', 'DSP Rhythms', 'Romantic Melodies', 'Folk Beats', 'Party Songs', 'Vintage Telugu'],
+    ),
+    MusicLanguage(
+      id: 'bhojpuri',
+      name: 'Bhojpuri',
+      nativeName: 'भोजपुरी',
+      subtitle: 'Desi Folk, Chhath & Party',
+      searchQuery: 'Bhojpuri Top Songs',
+      albumQuery: 'Bhojpuri Hits',
+      gradient: [Color(0xFFF4511E), Color(0xFFBF360C)],
+      icon: Icons.graphic_eq_rounded,
+      subgenres: ['Bhojpuri Top Hits', 'Desi Chhath Geet', 'Bhojpuri DJ Remix', 'Folk Sangeet', 'Bhakti Sagar', 'Bhojpuri Pop'],
+    ),
+    MusicLanguage(
+      id: 'bengali',
+      name: 'Bengali',
+      nativeName: 'বাংলা',
+      subtitle: 'Rabindra Sangeet & Modern',
+      searchQuery: 'Bengali Top Hits',
+      albumQuery: 'Bengali Songs',
+      gradient: [Color(0xFF3949AB), Color(0xFF1A237E)],
+      icon: Icons.favorite_rounded,
+      subgenres: ['Rabindra Sangeet', 'Modern Bengali Pop', 'Baul & Folk', 'Romantic Melodies', 'Adhunik Gaan', 'Durga Puja Hits'],
+    ),
+    MusicLanguage(
+      id: 'kannada',
+      name: 'Kannada',
+      nativeName: 'ಕನ್ನಡ',
+      subtitle: 'Sandalwood Hits & Folk',
+      searchQuery: 'Kannada Top Hits',
+      albumQuery: 'Kannada Hits',
+      gradient: [Color(0xFF00897B), Color(0xFF004D40)],
+      icon: Icons.library_music_rounded,
+      subgenres: ['Sandalwood Top Hits', 'Romantic Kannada', 'Folk & Janapada', 'Devotional', 'Party Beats'],
+    ),
+    MusicLanguage(
+      id: 'malayalam',
+      name: 'Malayalam',
+      nativeName: 'മലയാളം',
+      subtitle: 'Mollywood Melodies & Indie',
+      searchQuery: 'Malayalam Top Hits',
+      albumQuery: 'Malayalam Hits',
+      gradient: [Color(0xFF5E35B1), Color(0xFF311B92)],
+      icon: Icons.queue_music_rounded,
+      subgenres: ['Mollywood Melodies', 'Indie Kerala Pop', 'Folk & Traditional', 'Christian Devotional', 'Slow Chill'],
+    ),
+  ];
+}
