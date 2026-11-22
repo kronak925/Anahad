@@ -52,3 +52,10 @@ app.*.map.json
 # Local scratch and tooling
 scratch/
 .dartServer/
+
+# Internal drafts and unused platforms
+marketing/
+documentation/
+legal/
+ios/
+
