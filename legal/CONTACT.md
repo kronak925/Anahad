@@ -9,9 +9,10 @@
 ## 1. General Inquiries & Feedback
 
 For questions regarding ANAHAD, feature feedback, and general project discussion:
-- **Project Repository**: https://github.com/anahad-music/anahad
-- **Issue Tracker**: https://github.com/anahad-music/anahad/issues
-- **Discussions**: https://github.com/anahad-music/anahad/discussions
+- **Project Repository**: https://github.com/kronak925/Anahad
+- **Issue Tracker**: https://github.com/kronak925/Anahad/issues
+- **Discussions**: https://github.com/kronak925/Anahad/discussions
+- **Telegram Group (Bug Reports & Community)**: https://t.me/+3gyWZ-jgfGQxNjg1
 
 ---
 

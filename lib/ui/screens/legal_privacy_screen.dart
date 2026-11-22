@@ -128,6 +128,25 @@ class LegalPrivacyScreen extends StatelessWidget {
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             child: ListTile(
+              leading: const Icon(Icons.forum_rounded),
+              title: const Text('Telegram Community & Bug Reports'),
+              subtitle: const Text('Join Anahad Bug Reports on Telegram'),
+              trailing: const Icon(Icons.copy_rounded, size: 20),
+              onTap: () {
+                Clipboard.setData(const ClipboardData(text: 'https://t.me/+3gyWZ-jgfGQxNjg1'));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Telegram invite link copied: https://t.me/+3gyWZ-jgfGQxNjg1'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 8),
+          Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            child: ListTile(
               leading: const Icon(Icons.mail_outline_rounded),
               title: const Text('Contact Legal & Privacy Maintainer'),
               subtitle: const Text('For copyright notices, privacy queries, or support'),

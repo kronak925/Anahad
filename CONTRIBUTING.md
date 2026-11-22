@@ -28,10 +28,13 @@ Before submitting a Pull Request, please ensure your contribution aligns with ou
 
 ### Local Setup
 ```bash
-git clone https://github.com/[username]/anahad.git
-cd anahad
+git clone https://github.com/kronak925/Anahad.git
+cd Anahad
 flutter pub get
 ```
+
+### Community & Real-Time Support
+If you have questions or want to discuss bug reports and feature ideas in real-time, join our [Telegram Group (Anahad Bug Reports)](https://t.me/+3gyWZ-jgfGQxNjg1).
 
 ### Running Tests & Static Analysis
 ```bash

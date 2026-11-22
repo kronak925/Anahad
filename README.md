@@ -12,6 +12,7 @@
   <a href="#features"><img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=flat&logo=android&logoColor=white" alt="Platform: Android" /></a>
   <a href="#technical-stack"><img src="https://img.shields.io/badge/Built%20With-Flutter%203.27-02569B?style=flat&logo=flutter&logoColor=white" alt="Built with Flutter" /></a>
   <a href="#privacy-overview"><img src="https://img.shields.io/badge/Privacy-Zero%20Telemetry-blueviolet?style=flat&logo=shield" alt="Privacy: Zero Telemetry" /></a>
+  <a href="https://t.me/+3gyWZ-jgfGQxNjg1"><img src="https://img.shields.io/badge/Telegram-Bug%20Reports-2CA5E0?style=flat&logo=telegram&logoColor=white" alt="Telegram Community" /></a>
   <a href="#licensing"><img src="https://img.shields.io/badge/License-Source--Available%20Proprietary-red?style=flat" alt="License: Source-Available" /></a>
 </p>
 
@@ -105,8 +106,8 @@ graph TD
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/[username]/anahad.git
-   cd anahad
+   git clone https://github.com/kronak925/Anahad.git
+   cd Anahad
    ```
 
 2. Fetch dependencies:
@@ -140,9 +141,9 @@ graph TD
 
 ANAHAD adheres strictly to **Privacy-by-Design**:
 - **No User Registration**: No emails, passwords, phone numbers, or social sign-in.
-- **Zero Third-Party SDKs**: No Google Analytics for Firebase, Crashlytics, Facebook SDK, or ad networks.
+- **Zero Third-Party SDKs**: No Google Analytics, Firebase, Crashlytics, Facebook SDK, or ad networks.
 - **Local Sandboxing**: Playlists, favorites, listening history, and preferences remain solely on your local device.
-- For complete details, consult our [Data Inventory](documentation/privacy/DATA_INVENTORY.md) and [Privacy Policy](legal/PRIVACY_POLICY.md).
+- Full transparency details are accessible anytime directly inside the app under **Settings → Legal & Privacy**.
 
 ---
 
@@ -160,16 +161,9 @@ ANAHAD adheres strictly to **Privacy-by-Design**:
 
 ---
 
-## 10. Legal Documentation & Disclaimers
+## 10. Disclaimer & Legal Notice
 
-- [Terms of Service](legal/TERMS_OF_SERVICE.md)
-- [Privacy Policy](legal/PRIVACY_POLICY.md)
-- [Legal Disclaimer](legal/DISCLAIMER.md)
-- [Copyright & Intellectual Property](legal/COPYRIGHT_AND_INTELLECTUAL_PROPERTY.md)
-- [Third-Party Licenses & Notices](legal/THIRD_PARTY_NOTICES.md)
-- [Acceptable Use Policy](legal/ACCEPTABLE_USE_POLICY.md)
-
-**Notice**: ANAHAD is an independent audio player tool. Users are responsible for having appropriate legal rights and permissions for any sound recordings accessed, played, or downloaded using the Application.
+ANAHAD is an independent audio player tool engineered for personal playback. Users are responsible for having appropriate legal rights and permissions for any sound recordings accessed, played, or downloaded using the Application. The full terms, disclaimer, and open-source license attributions are available inside the app under **Settings → Legal & Privacy**.
 
 ---
 
@@ -181,8 +175,16 @@ ANAHAD adheres strictly to **Privacy-by-Design**:
 
 ---
 
-## 12. License & Intellectual Property
+## 12. Community & Bug Reports
 
-- Application source code and branding are copyright © 2026 [Maintainer Name / Independent Developer].
-- Open-source license selection is currently pending maintainer approval (see [LICENSE_COMPARISON.md](LICENSE_COMPARISON.md) for options).
-- All third-party software packages are governed by their respective licenses in [legal/THIRD_PARTY_NOTICES.md](legal/THIRD_PARTY_NOTICES.md).
+Join the official community to share feedback, request features, or report bugs in real-time:
+- **Telegram Group (Bug Reports & Feedback)**: [t.me/+3gyWZ-jgfGQxNjg1](https://t.me/+3gyWZ-jgfGQxNjg1)
+- **GitHub Issues**: [github.com/kronak925/Anahad/issues](https://github.com/kronak925/Anahad/issues)
+
+---
+
+## 13. License & Intellectual Property
+
+- Application source code and branding are copyright © 2026 ANAHAD Maintainer. All Rights Reserved.
+- Distributed under the **ANAHAD Source-Available License** (see [LICENSE](LICENSE)).
+- All third-party software packages are governed by their respective open-source licenses as detailed in the application's **Settings → Legal & Privacy** section.
